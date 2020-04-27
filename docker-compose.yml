@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  application:
+    build: .
+    ports:
+      - "5000:5000"
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "flaskapp"
+      POSTGRES_PASSWORD: "hunter2"
